@@ -3,18 +3,18 @@
 // 이중 연결 리스트는 다음 노드, 이전 노드의 정보 전부 가지고 있음. => 양방향 순회 가능
 
 function DoublyLinkedList() {
-  var Node = function (element) {
+  let Node = function (element) {
     this.element = element;
     this.next = null;
     this.prev = null; //NEW
   };
 
-  var length = 0;
-  var head = null;
-  var tail = null; //NEW
+  let length = 0;
+  let head = null;
+  let tail = null; //NEW
 
   this.append = function (element) {
-    var node = new Node(element),
+    let node = new Node(element),
       current;
 
     if (head === null) {
@@ -34,7 +34,7 @@ function DoublyLinkedList() {
   this.insert = function (position, element) {
     //범위 이외의 값인지 체크한다
     if (position >= 0 && position <= length) {
-      var node = new Node(element),
+      let node = new Node(element),
         current = head,
         previous,
         index = 0;
@@ -82,7 +82,7 @@ function DoublyLinkedList() {
   this.removeAt = function (position) {
     //범위 이외의 값인지 체크한다
     if (position > -1 && position < length) {
-      var current = head,
+      let current = head,
         previous,
         index = 0;
 
@@ -125,12 +125,12 @@ function DoublyLinkedList() {
   };
 
   this.remove = function (element) {
-    var index = this.indexOf(element);
+    let index = this.indexOf(element);
     return this.removeAt(index);
   };
 
   this.indexOf = function (element) {
-    var current = head,
+    let current = head,
       index = -1;
 
     //첫 번째 원소 체크
@@ -167,7 +167,7 @@ function DoublyLinkedList() {
   };
 
   this.toString = function () {
-    var current = head,
+    let current = head,
       s = current ? current.element : "";
 
     while (current && current.next) {
@@ -179,7 +179,7 @@ function DoublyLinkedList() {
   };
 
   this.inverseToString = function () {
-    var current = tail,
+    let current = tail,
       s = current ? current.element : "";
 
     while (current && current.prev) {

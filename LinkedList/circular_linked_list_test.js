@@ -1,15 +1,15 @@
 // 환형 연결 리스트(Circular Linked List): 마지막 원소의 next가 null이 아니라 첫번째 원소(head)를 가리킴.
 function CircularLinkedList() {
-  var Node = function (element) {
+  let Node = function (element) {
     this.element = element;
     this.next = null;
   };
 
-  var length = 0;
-  var head = null;
+  let length = 0;
+  let head = null;
 
   this.append = function (element) {
-    var node = new Node(element),
+    let node = new Node(element),
       current;
 
     if (head === null) {
@@ -37,7 +37,7 @@ function CircularLinkedList() {
   this.insert = function (position, element) {
     //check for out-of-bounds values
     if (position >= 0 && position <= length) {
-      var node = new Node(element),
+      let node = new Node(element),
         current = head,
         previous,
         index = 0;
@@ -80,7 +80,7 @@ function CircularLinkedList() {
   this.removeAt = function (position) {
     //check for out-of-bounds values
     if (position > -1 && position < length) {
-      var current = head,
+      let current = head,
         previous,
         index = 0;
 
@@ -114,12 +114,12 @@ function CircularLinkedList() {
   };
 
   this.remove = function (element) {
-    var index = this.indexOf(element);
+    let index = this.indexOf(element);
     return this.removeAt(index);
   };
 
   this.indexOf = function (element) {
-    var current = head,
+    let current = head,
       index = -1;
 
     //check first item
@@ -160,7 +160,7 @@ function CircularLinkedList() {
   };
 
   this.toString = function () {
-    var current = head,
+    let current = head,
       s = current.element;
 
     while (current.next !== head) {
@@ -175,3 +175,37 @@ function CircularLinkedList() {
     console.log(this.toString());
   };
 }
+
+let circularLinkedList = new CircularLinkedList();
+
+circularLinkedList.append(15);
+circularLinkedList.print();
+
+circularLinkedList.append(16);
+circularLinkedList.print();
+
+circularLinkedList.insert(0, 14);
+circularLinkedList.print();
+
+circularLinkedList.insert(1, 14.5);
+circularLinkedList.print();
+
+circularLinkedList.insert(4, 17);
+circularLinkedList.print();
+
+circularLinkedList.removeAt(0);
+circularLinkedList.print();
+
+circularLinkedList.removeAt(1);
+circularLinkedList.print();
+
+circularLinkedList.removeAt(2);
+circularLinkedList.print();
+
+circularLinkedList.removeAt(1);
+circularLinkedList.print();
+
+circularLinkedList.removeAt(0);
+circularLinkedList.print();
+
+console.log(circularLinkedList.indexOf(14.5));
