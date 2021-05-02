@@ -8,6 +8,7 @@ let findDisappearedNumbers = function (nums) {
     newIndex = Math.abs(nums[i]) - 1;
     //Math.abs() -> 절대값 중요
     if (nums[newIndex] > 0) {
+      // 이미 음수화된 원소는 제외하고 양수 원소일 경우에만 음수화
       nums[newIndex] *= -1;
     }
   }

@@ -1,4 +1,4 @@
-// 133. Clone Graph
+// 133. Clone Graph(깊은 복사)
 
 // let cloneGraph = function (node) {
 //   if (node === null) {
@@ -18,6 +18,7 @@
 
 let deepCopy = function (arr) {
   if (arr === null || typeof arr !== "object") {
+    // arr가 비었거나 배열이 아니라 그냥 숫자원소일 때, 별 처리 없이 리턴
     return arr;
   }
 

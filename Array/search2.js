@@ -1,5 +1,4 @@
 // 941. Vaiid Mountain Array
-//
 
 let validMountainArray = function (arr) {
   if (arr.length < 3) {

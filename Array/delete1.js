@@ -6,7 +6,7 @@ let removeElement = function (nums, val) {
   for (let i = 0; i < nums.length; i++) {
     if (nums[i] === val) {
       nums.splice(i, 1); // splice 기억할것!!
-      i--; // i값 반드시 줄여야함!!
+      i--; // 전체 길이가 줄어들었으니까 i 반드시 줄여야함!!
     }
   }
   return nums.length;

@@ -9,9 +9,11 @@ let MaxConsecutiveOnes1 = function (nums) {
     if (nums[i] === 1) {
       count++;
       if (count > max) {
+        // 원소값이 1이고 count값이 max를 초과하면 max 갱신
         max = count;
       }
     } else {
+      // 원소값이 1이 아니라면 count값 초기화
       count = 0;
     }
   }

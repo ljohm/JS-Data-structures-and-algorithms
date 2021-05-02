@@ -5,7 +5,7 @@ let duplicateZeros = function (arr) {
     if (arr[i] === 0) {
       arr.splice(i, 0, 0);
       arr.pop();
-      i++;
+      i++; // 0(new) 0(old) 이므로 for문에서 i가 증가되기 전에 한번더 증가
     }
   }
 };

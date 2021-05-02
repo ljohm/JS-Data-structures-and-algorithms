@@ -17,18 +17,18 @@ let evalRPN = function (tokens) {
           sum = stack.pop() * stack.pop();
           break;
         case "/":
-          sum = Math.trunc((1 / stack.pop()) * stack.pop());
+          sum = Math.trunc((1 / stack.pop()) * stack.pop()); // 스택에 저장한 수를 꺼내 연산해야 하므로 순서 주의
           break;
         case "+":
           sum = stack.pop() + stack.pop();
           break;
         case "-":
-          sum = -stack.pop() + stack.pop();
+          sum = -stack.pop() + stack.pop(); // 스택에 저장한 수를 꺼내 연산해야 하므로 순서 주의2
           break;
       } // 나눗셈, 뺄셈시 주의!!
-      stack.push(sum);
+      stack.push(sum); // 연산자에 따라 계산하고 스택에 저장
     } else {
-      stack.push(parseInt(tokens[i]));
+      stack.push(parseInt(tokens[i])); // 원소가 숫자면 스택에 일단 저장
     }
   }
   return stack[0];

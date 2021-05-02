@@ -15,6 +15,6 @@ let checkIfExist = function (arr) {
 // includes()는 boolean으로 리턴.
 
 let arr = [-2, 0, 10, -19, 4, 6, -8];
-// console.log(checkIfExist(arr));
-let arr2 = [0, 0];
-console.log(arr2.indexOf(0));
+console.log(checkIfExist(arr));
+let arr2 = [0, 0, 0];
+console.log(checkIfExist(arr2));

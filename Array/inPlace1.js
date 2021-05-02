@@ -1,5 +1,4 @@
 // 1299. Replace Elements with Greatest Element on Right Side
-//
 
 // let replaceElements = function (arr) {
 //   for (let i = 0; i < arr.length; i++) {
@@ -15,9 +14,9 @@
 let replaceElements = function (arr) {
   for (let i = 0; i < arr.length; i++) {
     if (i !== arr.length - 1) {
-      arr[i] = Math.max(...arr.slice(i + 1)); // ***
+      arr[i] = Math.max(...arr.slice(i + 1)); // *** 해당 원소의 다음 원소부터 잘라서 max값 추출후 대입
     } else if (i === arr.length - 1) {
-      arr[i] = -1;
+      arr[i] = -1; // 마지막 원소는 무조건 -1 대입
     }
   }
   return arr;
