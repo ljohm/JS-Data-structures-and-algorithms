@@ -136,8 +136,3 @@ console.log(intersectionAB.values());
 
 let differenceAB = setA.difference(setB);
 console.log(differenceAB.values());
-
-// function속 객체에 접근할 수 없는 이유
-// delete가 하는일
-// hasOwnProperty()
-// Object.keys()
