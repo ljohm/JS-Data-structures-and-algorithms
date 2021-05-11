@@ -46,11 +46,13 @@ function BinarySearchTree() {
       node.right = removeNode(node.right, key);
       return node;
     } else {
+      // 1. 리프 노드(자식 노드  X)
       if (node.left === null && node.right === null) {
         node = null;
         return node;
       }
 
+      // 2. 자식이 하나뿐인 노드
       if (node.left === null) {
         node = node.right;
         return node;
@@ -59,6 +61,7 @@ function BinarySearchTree() {
         return node;
       }
 
+      // 3. 자식이 둘인 노드
       let aux = findMinNode(node.right);
       node.key = aux.key;
       node.right = removeNode(node.right, aux.key);
