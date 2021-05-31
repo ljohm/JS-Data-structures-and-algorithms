@@ -19,7 +19,3 @@ let thirdMax = function (nums) {
 
 let arr = [1, 2];
 console.log(thirdMax(arr));
-// let set = new Set(arr);
-// console.log(set);
-// console.log(Array.from(set));
-console.log(arr);

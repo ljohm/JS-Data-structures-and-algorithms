@@ -2,15 +2,21 @@
 // 각 원소의 제곱값을 오름차순으로 정렬
 
 let sortedSquares = function (arr) {
-  let _arr = [...arr];
-  for (let i = 0; i < _arr.length; i++) {
-    _arr[i] = _arr[i] * _arr[i];
+  const res = Array(arr.length).fill(0);
+  let left = 0,
+    right = arr.length - 1,
+    index = arr.length - 1;
+  while (left <= right) {
+    if (Math.abs(arr[left]) > Math.abs(arr[right])) {
+      res[index] = arr[left] * arr[left];
+      left++;
+    } else {
+      res[index] = arr[right] * arr[right];
+      right--;
+    }
+    index--;
   }
-  _arr.sort(function (a, b) {
-    return a - b;
-  });
-
-  return _arr;
+  return res;
 };
 
 let arr = [-7, -3, 2, 3, 11];
