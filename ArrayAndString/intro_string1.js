@@ -1,4 +1,4 @@
-// 67. Add Binary(unsolved)
+// 67. Add Binary
 
 let addBinary = function (a, b) {
   let carry = 0;
@@ -8,7 +8,7 @@ let addBinary = function (a, b) {
   let len2 = b.length - 1;
 
   for (; len1 >= 0 || len2 >= 0 || carry > 0; len1--, len2--) {
-    let sum = (+a[len1] || 0) + (+b[len2] || 0) + carry;
+    let sum = (parseInt(a[len1]) || 0) + (parseInt(b[len2]) || 0) + carry;
     if (sum > 1) {
       sum = sum % 2;
       carry = 1;
@@ -20,4 +20,4 @@ let addBinary = function (a, b) {
   return result;
 };
 
-console.log(addBinary(11, 1));
+console.log(addBinary("11", "1"));
