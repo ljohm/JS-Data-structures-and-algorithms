@@ -1,19 +1,18 @@
 // 344. Reverse String
 
-let reverseString = function (s) {
-  let left = 0;
-  let right = s.length - 1;
+let reverseString = function (strs) {
+  let left = 0,
+    right = strs.length - 1;
 
   while (left < right) {
-    let prev = s[left];
-    s[left] = s[right];
-    s[right] = prev;
+    let tmp = strs[left];
+    strs[left] = strs[right];
+    strs[right] = tmp;
     left++;
     right--;
   }
 
-  return s;
+  return strs;
 };
 
-let arr = ["H", "a", "n", "n", "a", "h"];
-console.log(reverseString(arr));
+console.log(reverseString(["h", "e", "l", "l", "o"]));

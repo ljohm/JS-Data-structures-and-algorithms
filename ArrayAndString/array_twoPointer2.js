@@ -1,15 +1,12 @@
 // 561. Array Partition 1
 
 let arrayPairSum = function (nums) {
-  nums.sort((a, b) => {
-    return a - b;
-  });
-  let res = 0;
+  let sum = 0;
+  nums.sort((a, b) => a - b);
   for (let i = 0; i < nums.length; i += 2) {
-    res += nums[i];
+    sum += nums[i];
   }
-  return res;
+  return sum;
 };
 
-let arr = [1, 2, 2, 5, 6, 6];
-console.log(arrayPairSum(arr));
+console.log(arrayPairSum([1, 4, 3, 2]));
