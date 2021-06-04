@@ -1,20 +1,18 @@
 // 119. Pascal's Triangle 2
 
 let getRow = function (rowIndex) {
-  let matrix = [];
-
-  for (let i = 0; i < rowIndex + 1; i++) {
-    matrix[i] = [];
+  let res = [];
+  for (let i = 0; i <= rowIndex; i++) {
+    res[i] = [];
     for (let j = 0; j < i + 1; j++) {
       if (j === 0 || i === j) {
-        matrix[i][j] = 1;
+        res[i][j] = 1;
       } else {
-        matrix[i][j] = matrix[i - 1][j - 1] + matrix[i - 1][j];
+        res[i][j] = res[i - 1][j - 1] + res[i - 1][j];
       }
     }
   }
-
-  return matrix[rowIndex];
+  return res[rowIndex];
 };
 
 console.log(getRow(3));

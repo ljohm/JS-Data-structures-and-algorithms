@@ -8,3 +8,5 @@ let reverseWords = function (s) {
   }
   return result.join(" ");
 };
+
+console.log(reverseWords("Let's go"));
