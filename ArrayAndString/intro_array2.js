@@ -2,11 +2,8 @@
 
 let dominantIndex = function (nums) {
   let max = Math.max(...nums);
-
   for (let i = 0; i < nums.length; i++) {
-    if (nums[i] === 0 && nums.length === 1) {
-      return i;
-    } else if (nums[i] !== max && nums[i] * 2 > max) {
+    if (nums[i] !== max && nums[i] * 2 > max) {
       return -1;
     }
   }
