@@ -1,36 +1,19 @@
 // 142. Linked List Cycle 2(unsolved)
+// cycle이 시작되는 노드를 리턴
 
 let detectCycle = function (head) {
-  let hare = head;
   let tortoise = head;
-  let index = 0;
-
-  while (hare !== null && hare.next !== null) {
+  let hare = head;
+  while (hare && hare.next) {
     tortoise = tortoise.next;
     hare = hare.next.next;
-    index++;
-
-    if (hare === tortoise) {
-      return `tail connects to node index ${index + 1}`;
-    }
-  }
-  return false;
-};
-
-let detectCycle2 = function (head) {
-  let slow = head;
-  let fast = head;
-
-  while (slow && fast && fast.next) {
-    slow = slow.next;
-    fast = fast.next.next;
-
-    if (slow === fast) {
-      while (head !== fast) {
-        head = head.next;
-        fast = fast.next;
+    if (tortoise === hare) {
+      tortoise = head;
+      while (tortoise !== hare) {
+        tortoise = tortoise.next;
+        hare = hare.next;
       }
-      return head;
+      return tortoise;
     }
   }
   return null;

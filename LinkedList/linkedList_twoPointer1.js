@@ -5,7 +5,7 @@
 let hasCycle = function (head) {
   let hare = head;
   let tortoise = head;
-  while (hare !== null && hare.next !== null) {
+  while (hare && hare.next) {
     tortoise = tortoise.next;
     hare = hare.next.next;
     if (tortoise === hare) {
