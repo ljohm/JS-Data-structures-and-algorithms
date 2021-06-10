@@ -4,7 +4,6 @@ let oddEvenList = function (head) {
   if (!head) {
     return head;
   }
-
   let odd = head;
   let even = head.next;
   while (odd.next && odd.next.next) {
