@@ -1,20 +1,22 @@
-// 21. Merge Two Sorted Lists(unsolved)
+// 21. Merge Two Sorted Lists
 
 let mergeTwoLists = function (l1, l2) {
-  let head = null;
-  let c1 = l1;
-  let c2 = l2;
-  let p = head;
+  let merge = new ListNode();
+  let head = merge;
 
-  while (c1 || c2) {
-    if ((c1 && !c2) || (c1 && c1.val < c2.val)) {
-      p.next = c1;
-      c1 = c1.next;
+  while (l1 && l2) {
+    if (l1.val < l2.val) {
+      merge.next = l1;
+      l1 = l1.next;
     } else {
-      p.next = c2;
-      c2 = c2.next;
+      merge.next = l2;
+      l2 = l2.next;
     }
-    p = p.next;
+    merge = merge.next;
   }
+
+  if (!l1) merge.next = l2;
+  else if (!l2) merge.next = l1;
+
   return head.next;
 };
